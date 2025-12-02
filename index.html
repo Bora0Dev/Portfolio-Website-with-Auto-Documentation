@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bora0dev — Portfolio</title>
+  <meta name="description" content="Portfolio of bora0dev, game developer.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Using a placeholder for favicon if not present, or the existing one -->
+  <link rel="icon" href="bora0devlogo1.png" type="image/png">
+</head>
+
+<body>
+  <header>
+    <img src="bora0devlogo1.png" alt="bora0dev logo" class="logo">
+    <h1>bora0dev</h1>
+    <p class="bio">Game Developer & Software Engineer.<br>Passionate about creating immersive experiences and clean code.</p>
+    
+    <div class="social-links">
+      <a href="https://github.com/bora0dev" target="_blank">GitHub</a>
+      <a href="https://bora0dev.itch.io/" target="_blank">Itch.io</a>
+      <a href="mailto:contact@example.com">Contact</a>
+      <a href="docs/gen/index.html" target="_blank">Documentation</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      
+      <div class="project-card">
+        <h3>Wavebreaker</h3>
+        <p>An exciting arcade game where you survive waves of enemies. Built with passion and precision.</p>
+        <div class="actions">
+          <a href="https://bora0dev.itch.io/wavebreaker" target="_blank" class="btn">▶ Play on itch.io</a>
+          <a href="https://github.com/bora0dev/Wavebreaker" target="_blank" class="btn btn-secondary">View Code</a>
+        </div>
+        <a href="https://bora0dev.itch.io/wavebreaker" target="_blank">
+          <img src="Wavebreaker.gif" alt="Wavebreaker gameplay preview" class="project-preview">
+        </a>
+      </div>
+
+      <div class="project-card" style="margin-top: 30px;">
+        <h3>Auto-Documentation System</h3>
+        <p>This portfolio itself! It features automatic documentation generation using JSDoc and GitHub Actions.</p>
+        <div class="actions">
+          <a href="docs/gen/index.html" target="_blank" class="btn">View Docs</a>
+          <a href="https://github.com/bora0dev/Portfolio-Website-with-Auto-Documentation" target="_blank" class="btn btn-secondary">View Repo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> bora0dev · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
