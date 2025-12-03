@@ -67,6 +67,14 @@ p.bio {
   color: var(--primary-color);
 }
 
+.discord-tag {
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+
 main {
   width: 100%;
   max-width: 800px;
