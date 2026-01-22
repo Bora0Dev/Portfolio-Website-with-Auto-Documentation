@@ -15,13 +15,11 @@
   <header>
     <img src="bora0devlogo.png" alt="bora0dev logo" class="logo">
     <h1>bora0dev</h1>
-    <p class="bio">Game Developer & Software Engineer.<br>Passionate about creating immersive experiences and clean
-      code.</p>
 
-    <div class="social-links">
-      <a href="https://github.com/bora0dev" target="_blank">GitHub</a>
-      <a href="https://bora0dev.itch.io/" target="_blank">Itch.io</a>
-      <a href="mailto:boradevbusiness@gmail.com">Contact</a>
+    <div class="social-links" style="align-items: center;">
+      <a href="https://github.com/bora0dev" target="_blank" class="btn btn-secondary">GitHub</a>
+      <a href="https://bora0dev.itch.io/" target="_blank" class="btn btn-secondary">Itch.io</a>
+      <a href="mailto:boradevbusiness@gmail.com" class="btn">Contact</a>
 
       <span class="discord-tag">Discord: boradev</span>
     </div>
@@ -32,9 +30,11 @@
       <h2>About Me</h2>
       <h3 class="subtitle">Software Engineer | Game Developer | Graphics Enthusiast</h3>
 
-      <p>I am a developer with a diverse technical toolkit and a passion for building from scratch. My expertise covers
-        the full development lifecycle, from architecting scalable web applications to very low-level graphics
-        programming.</p>
+      <p>I am a versatile Software Engineer and Game Developer passionate about creating immersive digital experiences.
+        My work spans the full development lifecycle, from architecting scalable cloud solutions for FinTech to
+        designing independent games and experimenting with low-level graphics programming. Whether building robust SaaS
+        platforms or interactive virtual worlds, I focus on writing clean, efficient code and building systems from
+        scratch.</p>
 
       <div class="skill-category">
         <h4>Web & SaaS Architecture</h4>
@@ -65,17 +65,45 @@
       </div>
     </section>
 
-    <section id="web-projects">
+    <div class="project-tabs">
+      <button class="tab-btn active" data-target="all">All</button>
+      <button class="tab-btn" data-target="web-projects">Web Projects</button>
+      <button class="tab-btn" data-target="graphics-projects">Graphics Projects</button>
+      <button class="tab-btn" data-target="game-projects">Game Projects</button>
+    </div>
+
+    <section id="web-projects" class="project-section">
       <h2>Web Projects</h2>
-      <p style="color: var(--text-muted); font-style: italic;">More web projects coming soon...</p>
+      <div class="project-card">
+        <h3>B2B SaaS Architecture</h3>
+        <p>B2B SaaS Architect | FinTech for F&B | C#, Azure & AWS | Cloud-Native & Containerized Testing Specialist</p>
+        <div
+          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-top: 15px;">
+          <iframe src="https://www.youtube.com/embed/7dX4aIKK2Dg" title="B2B SaaS Architecture Preview" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+      </div>
     </section>
 
-    <section id="graphics-projects">
+    <section id="graphics-projects" class="project-section">
       <h2>Graphics Projects</h2>
-      <p style="color: var(--text-muted); font-style: italic;">Graphics programming experiments coming soon...</p>
+      <div class="project-card">
+        <h3>Psychedelic Shader Visuals</h3>
+        <p>A GLSL shader experiment featuring kaleidoscope symmetry, fractal patterns, and dynamic color cycling.</p>
+        <div
+          style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-top: 15px;">
+          <iframe src="https://www.youtube.com/embed/xi-Odcnw61Q" title="Psychedelic Shader Visuals Preview"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+      </div>
     </section>
 
-    <section id="game-projects">
+    <section id="game-projects" class="project-section">
       <h2>Game Projects</h2>
 
       <div class="project-card">
@@ -125,6 +153,29 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tab Navigation Logic
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.project-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        const target = tab.getAttribute('data-target');
+
+        sections.forEach(section => {
+          if (target === 'all' || section.id === target) {
+            section.classList.remove('hidden');
+          } else {
+            section.classList.add('hidden');
+          }
+        });
+      });
+    });
   </script>
 </body>
 
